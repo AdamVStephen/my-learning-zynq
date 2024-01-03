@@ -40,6 +40,24 @@ data and channel data.
 
 The main control loop is provided by a main function (and hence the driver interface is as a long running service daemon, with a mailbox interface for modifying the control while it is running.
 
+The Pynq python interface provides the binding between the PynqMicroblaze generic pattern for using MicroBlaze soft core
+microprocessors to drive lower level peripherals.  This instantiates a Microblaze processor which loads and runs the
+main control loop.  The python interface handles changes to the mailbox interfaces to get functionality changes
+within the running control program.
+
+The first exercise is therefore to create a variant of the DA4 driver for the DA2 and to provide a different
+python wrapper to that code.
+
+As a secondary exercise, it is proposed to modify the pynq code to expose more of the built-in functionality
+within the DA4 driver.
+
+A useful skillset would be to work out how to launch the processes from other types of software.
+
+Whether it is possible to put FreeRTOS or similar on to a separate Microblaze processor so as to be 
+able to interact with the driver program more directly from the APU Linux is an interesting question.
+
+It may be possible to achieve this within the EPS32 or Arduino context more simply.
+
 ## DA2 
 
 The DA2 module looks much more basic with two very small ICs each with only 6 pins. 
